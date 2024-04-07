@@ -1,0 +1,9 @@
+{
+  "header": {
+    "nav": {
+      "home": "Trang chủ",
+      "blog": "Blog"
+    }
+  },
+  "home": {}
+}

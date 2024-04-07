@@ -1,0 +1,9 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "blog": "Blog"
+    }
+  },
+  "home": {}
+}
