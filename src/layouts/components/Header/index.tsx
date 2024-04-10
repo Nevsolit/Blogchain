@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ChangeLaguage, ChangeMode, Logo } from '~/components';
+import { AppIcon, Button, ChangeLaguage, ChangeMode, Logo } from '~/components';
 
 import NavBar from '../NavBar';
 
@@ -29,15 +29,17 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`${isHeaderHidden ? '-translate-y-full ' : 'translate-y-0'} sticky duration-200 top-0 flex justify-between items-center backdrop-blur-[2rem] border-b border-b-gray-200  md:w-4/5 w-full py-md   z-50 "`}
+      className={`${isHeaderHidden ? '-translate-y-full ' : 'translate-y-0'}  duration-200  p-3 md:p-6 flex justify-between items-center  w-full   z-50 "`}
     >
       <Logo />
-      <div className="flex gap-md items-center">
-        <NavBar />
-        <div className="flex gap-2 items-center pl-[22px] ml-2 border-l border-gray-300">
-          <ChangeMode />
-          <ChangeLaguage />
-        </div>
+      <NavBar />
+      <div className="flex gap-4">
+        <Button kind="rounded" className="hidden md:block">
+          Log in
+        </Button>
+        <Button kind="rounded" className="bg-black dark:bg-transparent  dark:border-white  text-white">
+          Sign up
+        </Button>
       </div>
     </header>
   );

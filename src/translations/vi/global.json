@@ -2,7 +2,9 @@
   "header": {
     "nav": {
       "home": "Trang chủ",
-      "blog": "Blog"
+      "blog": "Blog",
+      "discover": "Khám phá",
+      "about": "Về chúng tôi"
     }
   },
   "home": {}

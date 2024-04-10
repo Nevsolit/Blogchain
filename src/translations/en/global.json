@@ -2,7 +2,9 @@
   "header": {
     "nav": {
       "home": "Home",
-      "blog": "Blog"
+      "blog": "Blog",
+      "discover": "Discover",
+      "about": "About"
     }
   },
   "home": {}

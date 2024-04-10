@@ -17,7 +17,7 @@ function App() {
   }, [mode]);
 
   return (
-    <div className="text-black text-md dark:text-white bg-white dark:bg-black">
+    <div className="text-black dark:text-white bg-white dark:bg-black">
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
