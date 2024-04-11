@@ -1,43 +1,43 @@
-import { useState } from 'react';
-import { AppIcon, Button } from '~/components';
+import Title from '~/components/shared/Title';
 
-const dataSlider = [
-  'https://images.pexels.com/photos/3184613/pexels-photo-3184613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/7698712/pexels-photo-7698712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  'https://images.pexels.com/photos/7213187/pexels-photo-7213187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-];
+import Banner from './components/Banner';
 
 const HomeScreen: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   return (
-    <div className=" w-full px-4 md:px-6 duration-200">
-      <section
-        className="md:h-[91vh] h-[50vh] flex relative justxl:w-[90%] ify-center duration-200 items-center px-3 md:px-0 md:justify-start md:items-end rounded-3xl shadow-base"
-        style={{
-          backgroundImage: `url(${dataSlider[currentSlide]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="flex flex-col items-center gap-4 text-white md:items-start md:w-[90%] 2xl:w-[80%] md:p-14">
-          <h2 className="text-2xl xl:text-3xl font-medium">Feature</h2>
-          <h1 className="text-center text-4xl xl:text-6xl font-medium md:text-start">
-            Breaking into product desgin: Advice from untilted founder, Frakie
-          </h1>
-          <p className="text-center font-medium md:text-start xl:text-xl max-w-[70%]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ultricies sit nunc, ut. Nunc, viverra sed in
-            etiam. Eget ultricies sit nunc, ut. Nunc, viverra sed in etiam.
-          </p>
+    <div className=" w-full flex flex-col gap-8 px-4 md:px-6 duration-200">
+      <Banner />
+      <section className="w-full">
+        <Title title="Bài viết blog gần đây" />
+        <div className="flex overflow-x-auto gap-4 md:gap-6 overflow-y-hidden xl:grid  xl:grid-cols-4   thin-scroll mt-8">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
+            <div
+              key={index}
+              className="w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[35vw] xl:w-full flex-shrink-0 flex flex-col bg-white"
+            >
+              {/* <div className="w-full h-[50vw] sm:h-[30vw] md:h-[25vw] lg:h-[20vw] xl:h-[15vw]  rounded-2xl"></div> */}
+              <img
+                src="https://i.pinimg.com/564x/43/c8/00/43c800912a1c0b441beea98ac3b803cb.jpg"
+                alt=""
+                className="w-full h-[50vw] sm:h-[30vw] md:h-[25vw] lg:h-[20vw] xl:h-[15vw]  rounded-2xl object-cover"
+              />
+              <h1 className="font-semibold line-clamp-1 mt-4 text-[1.2rem]">How to sleep 8 hour in 3 hour?</h1>
+              <p className="line-clamp-3 text-sm mt-2 text-cl-gray">
+                Bài viết này nhằm tổng hợp lại các dự án mà học viên F8 đã hoàn thành và chia sẻ trên nhóm Học lập trình
+                web F8. Các dự án dưới đây được mình ngẫu nhiên lựa chọn để đăng chứ không mang tính xếp hạng các bạn
+                nhé.
+              </p>
+              <div className="mt-4 w-full flex items-center gap-4 font-semibold">
+                <img
+                  src="https://i.pinimg.com/564x/5d/f6/cb/5df6cbc8a8ab8c330a71c181d43cbdc7.jpg"
+                  alt=""
+                  className="w-[36px] h-[36px] rounded-full object-cover"
+                />
+                <p className="text-gray-700">Nevsolit - 12:00 | 21/12/2024</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <Button
-          className="absolute right-6 bottom-6 z-10 md:right-14 md:bottom-14"
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % dataSlider.length)}
-        >
-          <AppIcon name="arrow-forward" className="text-white text-4xl md:text-6xl" />
-        </Button>
       </section>
-      <section>Hello</section>
     </div>
   );
 };

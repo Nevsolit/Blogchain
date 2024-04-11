@@ -8,7 +8,7 @@ type MainLayoutProps = {};
 
 const MainLayout: React.FC<MainLayoutProps> = () => {
   return (
-    <div className="flex flex-col items-center gap-md">
+    <div className="flex flex-col pb-16 items-center gap-md">
       <Header />
       <Outlet />
       <ChangeMode />

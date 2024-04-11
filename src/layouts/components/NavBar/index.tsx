@@ -3,22 +3,26 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 import { ROUTES } from '~/routes/constants';
 
-const dataNavLink = [
+export const dataNavLink = [
   {
     to: ROUTES.HOME,
     name: 'header.nav.home',
+    icon: 'home',
   },
   {
     to: ROUTES.BLOG,
     name: 'header.nav.blog',
+    icon: 'book',
   },
   {
     to: ROUTES.BLOG,
     name: 'header.nav.discover',
+    icon: 'globe',
   },
   {
     to: ROUTES.BLOG,
     name: 'header.nav.about',
+    icon: 'people',
   },
 ];
 
@@ -27,7 +31,7 @@ const NavBar: React.FC = () => {
   const router = useLocation();
 
   return (
-    <nav className="md:flex gap-md items-center hidden gap-8 duration-200 lg:gap-12 font-medium">
+    <nav className="md:flex gap-md items-center hidden gap-8 duration-200  font-medium">
       {dataNavLink.map((nav, index) => {
         const isActive = router.pathname === nav.to;
         return (

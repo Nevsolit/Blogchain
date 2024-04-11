@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { AppIcon, Button, ChangeLaguage, ChangeMode, Logo } from '~/components';
+import { Button, Logo } from '~/components';
 
 import NavBar from '../NavBar';
 
